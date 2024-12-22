@@ -18,11 +18,11 @@ const AllCountries = ({query}) => {
           })
     },[])
 
-
+   console.log(countriesData)
 
 
   return (
-    <div className="countries-container">
+    countriesData?<div className="countries-container">
         { countriesData.filter((country)=>country.name.common.toLowerCase().includes(query) || country.region.toLowerCase().includes(query))
         .map((country, i)=>{
           return <CountryCard name={country.name.common}
@@ -34,7 +34,7 @@ const AllCountries = ({query}) => {
              data = {country}/>
  })
 }
-    </div>
+    </div>: <div><h1>Some Time It Takes longer time to Load <bold>for Third Party Rest APIs.</bold> please wait...</h1></div>
   )
 }
 
